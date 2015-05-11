@@ -20,9 +20,9 @@ RSpec.describe "posts/index", type: :view do
 
   it "renders a list of posts" do
     render
-    assert_select "tr>td", :text => "MyText".to_s, :count => 2
-    assert_select "tr>td", :text => "MyText".to_s, :count => 2
-    assert_select "tr>td", :text => "MyText".to_s, :count => 2
-    assert_select "tr>td", :text => "MyText".to_s, :count => 2
+    assert_select "tr>td", :text => "MyText".to_s, :count => 8
+    assert_select "tr>td", :text => "MyText".to_s, :count => 8
+    assert_select "tr>td", :text => "MyText".to_s, :count => 8
+    assert_select "tr>td", :text => "MyText".to_s, :count => 8
   end
 end
