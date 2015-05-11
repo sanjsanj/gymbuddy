@@ -61,4 +61,27 @@ feature 'Posts' do
       expect(page).to have_content 'Powerlifting'
     end
   end
+
+  context 'when deleting a post' do
+    # I know this is hideous, don't judge me, Sanjay
+    scenario 'it only allows you to delete posts you made' do
+      sign_up
+      visit '/posts'
+      click_link 'New Post'
+      select 'Swimming', from: 'Activity'
+      select 'Virgin Active Molegate', from: 'Location'
+      select_date_and_time(DateTime.now)
+      click_button 'Create Post'
+      expect(page).to have_content 'Destroy'
+      visit '/'
+      click_link 'Sign out'
+      click_link 'Sign up'
+      fill_in 'Email', with: 'g@g.com'
+      fill_in 'Password', with: '12345678'
+      fill_in 'Password confirmation', with: '12345678'
+      click_button 'Sign up'
+      visit '/posts'
+      expect(page).not_to have_content 'Destroy'
+    end
+  end
 end
