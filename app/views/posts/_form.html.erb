@@ -13,19 +13,19 @@
 
   <div class="field">
     <%= f.label :activity %><br>
-    <%= f.text_area :activity %>
+    <%= f.select :activity, ["Swimming", "Running", "Yoga", "Boxing"] %>
   </div>
   <div class="field">
     <%= f.label :location %><br>
-    <%= f.text_area :location %>
+    <%= f.select :location, ["Virgin Active Molegate", "Fitness for Freaks"] %>
   </div>
   <div class="field">
     <%= f.label :time %><br>
-    <%= f.text_area :time %>
+    <%= f.time_select "time" %>
   </div>
   <div class="field">
     <%= f.label :day %><br>
-    <%= f.text_area :day %>
+    <%= f.date_select "day" %>
   </div>
   <div class="actions">
     <%= f.submit %>

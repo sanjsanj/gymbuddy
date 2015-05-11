@@ -3,8 +3,8 @@ class CreatePosts < ActiveRecord::Migration
     create_table :posts do |t|
       t.text :activity
       t.text :location
-      t.text :time
-      t.text :day
+      t.time :time
+      t.date :day
 
       t.timestamps null: false
     end

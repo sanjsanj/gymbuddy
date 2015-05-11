@@ -14,6 +14,7 @@
   </thead>
 
   <tbody>
+  <% if @posts.any? %> 
     <% @posts.each do |post| %>
       <tr>
         <td><%= post.activity %></td>
@@ -22,12 +23,15 @@
         <td><%= post.day %></td>
         <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
       </tr>
     <% end %>
+  <% else %>
+    <p>No posts yet</p>
+  <% end %>
   </tbody>
 </table>
-
 <br>
 
 <%= link_to 'New Post', new_post_path %>

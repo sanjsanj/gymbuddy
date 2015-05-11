@@ -19,8 +19,8 @@ ActiveRecord::Schema.define(version: 20150511115103) do
   create_table "posts", force: :cascade do |t|
     t.text     "activity"
     t.text     "location"
-    t.text     "time"
-    t.text     "day"
+    t.time     "time"
+    t.date     "day"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
