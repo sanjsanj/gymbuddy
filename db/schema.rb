@@ -21,9 +21,9 @@ ActiveRecord::Schema.define(version: 20150511161202) do
     t.text     "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
     t.time     "time"
     t.date     "day"
-    t.integer  "user_id"
   end
 
   add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree

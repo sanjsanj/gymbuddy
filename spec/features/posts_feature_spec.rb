@@ -3,6 +3,7 @@ require 'rails_helper'
 feature 'Posts' do
 
   context 'Website on initialization' do
+
     scenario 'should have no posts' do
       visit '/posts'
       expect(page).to have_content 'No posts yet'
@@ -17,12 +18,7 @@ feature 'Posts' do
   context 'When creating a post' do
     scenario 'it shows the post' do
       sign_up
-      visit '/posts'
-      click_link 'New Post'
-      select 'Swimming', from: 'Activity'
-      select 'Virgin Active Molegate', from: 'Location'
-      select_date_and_time(DateTime.now)
-      click_button 'Create Post'
+      create_post
       expect(page).to have_content 'Post was successfully created.'
     end
 
