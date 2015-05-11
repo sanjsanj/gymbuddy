@@ -21,6 +21,11 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
+  <div class="field">
+    <%= f.label :fitness_bio %><br />
+    <%= f.text_field :fitness_bio %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
