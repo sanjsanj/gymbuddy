@@ -26,6 +26,7 @@ feature 'Posts' do
       expect(page).to have_link 'New Post'
     end
   end
+
   context 'When creating a post' do
     scenario 'it shows the post' do
       sign_up
@@ -41,6 +42,23 @@ feature 'Posts' do
     scenario 'users who are not signed in cannot post' do
       visit '/posts/new'
       expect(page).to have_content 'You need to sign in'
+    end
+  end
+
+  context 'When viewing a post' do
+    scenario 'it shows user profile details of post creator' do
+      sign_up
+      visit '/posts'
+      click_link 'New Post'
+      select 'Swimming', from: 'Activity'
+      select 'Virgin Active Molegate', from: 'Location'
+      select_date_and_time(DateTime.now)
+      click_button 'Create Post'
+      click_link 'Show'
+      expect(page).to have_content 'George'
+      expect(page).to have_content 'Male'
+      expect(page).to have_content 'Beginner'
+      expect(page).to have_content 'Powerlifting'
     end
   end
 end
