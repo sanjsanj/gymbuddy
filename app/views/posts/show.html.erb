@@ -53,7 +53,7 @@
 </p>
 
 <div>
-  <%= mail_to current_user.email, 'Send Message' %>
+  <%= mail_to @user.email, 'Send Message' %>
 </div>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |

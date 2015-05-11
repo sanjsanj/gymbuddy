@@ -9,6 +9,9 @@
 <body>
 
   <div>
+    <div>
+      <%= link_to "Find Your Gymbuddy", posts_path %>
+    </div>
     <% if user_signed_in? %>
       <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
 
