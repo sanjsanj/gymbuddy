@@ -1340,3 +1340,307 @@ Command :: file -b --mime '/var/folders/cc/nyvtq7hj62s98br08bcfzg6w0000gn/T/5461
   Rendered devise/shared/_links.html.erb (0.2ms)
   Rendered devise/registrations/new.html.erb within layouts/application (4.8ms)
 Completed 200 OK in 3250ms (Views: 25.4ms | ActiveRecord: 0.4ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddNameToUser (20150511135246)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (6.7ms)[0m  [1mALTER TABLE "users" ADD "name" character varying[0m
+  [1m[35mSQL (6.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150511135246"]]
+  [1m[36m (6.1ms)[0m  [1mCOMMIT[0m
+Migrating to AddGenderToUser (20150511135419)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "users" ADD "gender" integer[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150511135419"]]
+  [1m[36m (4.2ms)[0m  [1mCOMMIT[0m
+Migrating to AddFitnessLevelToUser (20150511135512)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "users" ADD "fitness_level" integer[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150511135512"]]
+  [1m[36m (2.9ms)[0m  [1mCOMMIT[0m
+Migrating to AddAttachmentImageToUsers (20150511135843)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "users" ADD "image_file_name" character varying[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "users" ADD "image_content_type" character varying
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "users" ADD "image_file_size" integer[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "users" ADD "image_updated_at" timestamp
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20150511135843"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (2.2ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+
+
+Started GET "/" for ::1 at 2015-05-11 15:30:16 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered home/index.html.erb within layouts/application (32.6ms)
+Completed 200 OK in 302ms (Views: 280.2ms | ActiveRecord: 7.4ms)
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-05-11 15:30:16 +0100
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-05-11 15:30:17 +0100
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-11 15:30:17 +0100
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-11 15:30:17 +0100
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-05-11 15:30:17 +0100
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-05-11 15:30:17 +0100
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-05-11 15:30:17 +0100
+
+
+Started DELETE "/users/sign_out" for ::1 at 2015-05-11 15:30:18 +0100
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"u1L1bV8bX5zOzW7nNBWZ2Oy50sZLeepwMJrMz8WBZRGzwhdi/cNbNn7rXPlhGZ+0v1QfJJcuiYyFJeHV5EgDSA=="}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 23ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2015-05-11 15:30:18 +0100
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 103ms (Views: 101.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2015-05-11 15:30:21 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (2.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (22.0ms)
+Completed 200 OK in 72ms (Views: 70.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2015-05-11 15:30:24 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 41ms (Views: 40.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2015-05-11 15:30:50 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gssuUpHz8IX+n2cywomakPxwwI9HqFC3RU+wFKAioDS4maUHGVZUt1yPdLTc3AjIkZinctB51OHryAh+wCJ0ig==", "user"=>{"email"=>"georg@g.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "name"=>"George", "gender"=>"male", "fitness_bio"=>"cool guy", "fitness_level"=>"Intermediate", "image"=>#<ActionDispatch::Http::UploadedFile:0x007fb0583e66a0 @tempfile=#<Tempfile:/var/folders/58/91w94_752k9bw83hfsm_pp_40000gn/T/RackMultipart20150511-18632-yj00gr.jpg>, @original_filename="beach.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"user[image]\"; filename=\"beach.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Sign up"}
+Command :: file -b --mime '/var/folders/58/91w94_752k9bw83hfsm_pp_40000gn/T/7193529abbf96dcc058f06d45121d8b120150511-18632-1564cew.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/58/91w94_752k9bw83hfsm_pp_40000gn/T/7193529abbf96dcc058f06d45121d8b120150511-18632-tfpn55.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/58/91w94_752k9bw83hfsm_pp_40000gn/T/7193529abbf96dcc058f06d45121d8b120150511-18632-tfpn55.jpg[0]'
+Command :: convert '/var/folders/58/91w94_752k9bw83hfsm_pp_40000gn/T/7193529abbf96dcc058f06d45121d8b120150511-18632-tfpn55.jpg[0]' -auto-orient -resize "300x300>" '/var/folders/58/91w94_752k9bw83hfsm_pp_40000gn/T/7193529abbf96dcc058f06d45121d8b120150511-18632-tfpn5520150511-18632-2fz298'
+Command :: file -b --mime '/var/folders/58/91w94_752k9bw83hfsm_pp_40000gn/T/7193529abbf96dcc058f06d45121d8b120150511-18632-tfpn5520150511-18632-2fz298'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/58/91w94_752k9bw83hfsm_pp_40000gn/T/7193529abbf96dcc058f06d45121d8b120150511-18632-tfpn55.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/58/91w94_752k9bw83hfsm_pp_40000gn/T/7193529abbf96dcc058f06d45121d8b120150511-18632-tfpn55.jpg[0]'
+Command :: convert '/var/folders/58/91w94_752k9bw83hfsm_pp_40000gn/T/7193529abbf96dcc058f06d45121d8b120150511-18632-tfpn55.jpg[0]' -auto-orient -resize "100x100>" '/var/folders/58/91w94_752k9bw83hfsm_pp_40000gn/T/7193529abbf96dcc058f06d45121d8b120150511-18632-tfpn5520150511-18632-h4fp'
+Command :: file -b --mime '/var/folders/58/91w94_752k9bw83hfsm_pp_40000gn/T/7193529abbf96dcc058f06d45121d8b120150511-18632-tfpn5520150511-18632-h4fp'
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'georg@g.com' LIMIT 1[0m
+Command :: file -b --mime '/var/folders/58/91w94_752k9bw83hfsm_pp_40000gn/T/7193529abbf96dcc058f06d45121d8b120150511-18632-jf3h8i.jpg'
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "fitness_bio", "name", "gender", "fitness_level", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"  [["email", "georg@g.com"], ["encrypted_password", "$2a$10$LFV4.ahEkA6hVqVVkv.r7e3bNQQqIlGZN.jFPC84p00f1QSajx0Wy"], ["fitness_bio", "cool guy"], ["name", "George"], ["gender", 0], ["fitness_level", 0], ["image_file_name", "beach.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 921941], ["image_updated_at", "2015-05-11 14:30:50.382361"], ["created_at", "2015-05-11 14:30:50.946121"], ["updated_at", "2015-05-11 14:30:50.946121"]]
+  [1m[36m (6.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "last_sign_in_ip" = $3, "current_sign_in_ip" = $4, "sign_in_count" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["last_sign_in_at", "2015-05-11 14:30:50.978174"], ["current_sign_in_at", "2015-05-11 14:30:50.978174"], ["last_sign_in_ip", "::1/128"], ["current_sign_in_ip", "::1/128"], ["sign_in_count", 1], ["updated_at", "2015-05-11 14:30:50.980287"], ["id", 4]]
+  [1m[35m (5.9ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 697ms (ActiveRecord: 13.9ms)
+
+
+Started GET "/" for ::1 at 2015-05-11 15:30:51 +0100
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+  Rendered home/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 42ms (Views: 40.3ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2015-05-11 15:36:07 +0100
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"0QXawm79akHas8ol+v4X9jfKz7XY/lYGIAVHbBo0j7frV1GX5ljOc3ij2aPkq4WuWiKoSE8v0lCOgv8GejRbCQ=="}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2015-05-11 15:36:07 +0100
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 26ms (Views: 24.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2015-05-11 15:36:10 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 31ms (Views: 29.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2015-05-11 15:36:49 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xm82BnH64O8xThf19UKRo8u/ig521IVDqytBegZHqAUFwVgzDPfddngAGHGGlnHftS2RKuN86n74ZRTz1PooJg==", "user"=>{"email"=>"ab@a.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "name"=>"Georgetta", "gender"=>"female", "fitness_bio"=>"Thing", "fitness_level"=>"2", "image"=>#<ActionDispatch::Http::UploadedFile:0x007fb0549160c0 @tempfile=#<Tempfile:/var/folders/58/91w94_752k9bw83hfsm_pp_40000gn/T/RackMultipart20150511-18632-1otxccl.JPG>, @original_filename="photo 2.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"user[image]\"; filename=\"photo 2.JPG\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Sign up"}
+Command :: file -b --mime '/var/folders/58/91w94_752k9bw83hfsm_pp_40000gn/T/bec8e7af2a8be6578c29297d0e39315020150511-18632-7v89rv.JPG'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/58/91w94_752k9bw83hfsm_pp_40000gn/T/320a54a4d99041cbc3cd34e675c29a5e20150511-18632-1u3lmr4.JPG[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/58/91w94_752k9bw83hfsm_pp_40000gn/T/320a54a4d99041cbc3cd34e675c29a5e20150511-18632-1u3lmr4.JPG[0]'
+Command :: convert '/var/folders/58/91w94_752k9bw83hfsm_pp_40000gn/T/320a54a4d99041cbc3cd34e675c29a5e20150511-18632-1u3lmr4.JPG[0]' -auto-orient -resize "300x300>" '/var/folders/58/91w94_752k9bw83hfsm_pp_40000gn/T/320a54a4d99041cbc3cd34e675c29a5e20150511-18632-1u3lmr420150511-18632-1awbxsa'
+Command :: file -b --mime '/var/folders/58/91w94_752k9bw83hfsm_pp_40000gn/T/320a54a4d99041cbc3cd34e675c29a5e20150511-18632-1u3lmr420150511-18632-1awbxsa'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/58/91w94_752k9bw83hfsm_pp_40000gn/T/320a54a4d99041cbc3cd34e675c29a5e20150511-18632-1u3lmr4.JPG[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/58/91w94_752k9bw83hfsm_pp_40000gn/T/320a54a4d99041cbc3cd34e675c29a5e20150511-18632-1u3lmr4.JPG[0]'
+Command :: convert '/var/folders/58/91w94_752k9bw83hfsm_pp_40000gn/T/320a54a4d99041cbc3cd34e675c29a5e20150511-18632-1u3lmr4.JPG[0]' -auto-orient -resize "100x100>" '/var/folders/58/91w94_752k9bw83hfsm_pp_40000gn/T/320a54a4d99041cbc3cd34e675c29a5e20150511-18632-1u3lmr420150511-18632-ivrwye'
+Command :: file -b --mime '/var/folders/58/91w94_752k9bw83hfsm_pp_40000gn/T/320a54a4d99041cbc3cd34e675c29a5e20150511-18632-1u3lmr420150511-18632-ivrwye'
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'ab@a.com' LIMIT 1
+Command :: file -b --mime '/var/folders/58/91w94_752k9bw83hfsm_pp_40000gn/T/bec8e7af2a8be6578c29297d0e39315020150511-18632-161bnbw.JPG'
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "fitness_bio", "name", "gender", "fitness_level", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["email", "ab@a.com"], ["encrypted_password", "$2a$10$O3vgwyE1ecDg5GKj/TqGDeVqsrrMkHTPle982NceL1Dr6K60zfpdK"], ["fitness_bio", "Thing"], ["name", "Georgetta"], ["gender", 0], ["fitness_level", 2], ["image_file_name", "photo_2.JPG"], ["image_content_type", "image/jpeg"], ["image_file_size", 1780896], ["image_updated_at", "2015-05-11 14:36:49.146548"], ["created_at", "2015-05-11 14:36:50.301980"], ["updated_at", "2015-05-11 14:36:50.301980"]]
+  [1m[35m (7.0ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "last_sign_in_ip" = $3, "current_sign_in_ip" = $4, "sign_in_count" = $5, "updated_at" = $6 WHERE "users"."id" = $7  [["last_sign_in_at", "2015-05-11 14:36:50.349660"], ["current_sign_in_at", "2015-05-11 14:36:50.349660"], ["last_sign_in_ip", "::1/128"], ["current_sign_in_ip", "::1/128"], ["sign_in_count", 1], ["updated_at", "2015-05-11 14:36:50.350574"], ["id", 5]]
+  [1m[36m (6.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 1304ms (ActiveRecord: 14.9ms)
+
+
+Started GET "/" for ::1 at 2015-05-11 15:36:50 +0100
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 5]]
+  Rendered home/index.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 75ms (Views: 72.1ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2015-05-11 15:42:33 +0100
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"bwJr7edoz5EF7DDgiyCnVgLkIMXK9U3vCBHz+cYxAyOsrAXYmmXyCEyiP2T49EcqfHY74V9dItJbX6ZwFIyDAA=="}
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/" for ::1 at 2015-05-11 15:42:33 +0100
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 40ms (Views: 39.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2015-05-11 15:42:34 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 39ms (Views: 37.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2015-05-11 15:43:17 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GJiJirVeopJVUnH2t8VqR63JKFVdhbohk14WlG8ycv7se2TgSQmOxbX1TWX6N3xLUmWi2T8e6qnSNsza4JrM7w==", "user"=>{"email"=>"i@i.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "name"=>"Georgetta", "gender"=>"1", "fitness_bio"=>"gooooood", "fitness_level"=>"1"}, "commit"=>"Sign up"}
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'i@i.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "fitness_bio", "name", "gender", "fitness_level", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["email", "i@i.com"], ["encrypted_password", "$2a$10$OYVqJNcT4eZCLrb/IArpZew.pgE6Gnl5NA6GKzUZV9WoN8QCRaxfm"], ["fitness_bio", "gooooood"], ["name", "Georgetta"], ["gender", 1], ["fitness_level", 1], ["created_at", "2015-05-11 14:43:17.296720"], ["updated_at", "2015-05-11 14:43:17.296720"]]
+  [1m[36m (8.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "last_sign_in_ip" = $3, "current_sign_in_ip" = $4, "sign_in_count" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["last_sign_in_at", "2015-05-11 14:43:17.307455"], ["current_sign_in_at", "2015-05-11 14:43:17.307455"], ["last_sign_in_ip", "::1/128"], ["current_sign_in_ip", "::1/128"], ["sign_in_count", 1], ["updated_at", "2015-05-11 14:43:17.308612"], ["id", 6]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 102ms (ActiveRecord: 10.1ms)
+
+
+Started GET "/" for ::1 at 2015-05-11 15:43:17 +0100
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 6]]
+  Rendered home/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 23ms (Views: 22.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2015-05-11 15:55:39 +0100
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 6]]
+  Rendered home/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 42ms (Views: 41.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-11 15:55:39 +0100
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-05-11 15:55:39 +0100
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-11 15:55:39 +0100
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-05-11 15:55:39 +0100
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-05-11 15:55:39 +0100
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-05-11 15:55:39 +0100
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-05-11 15:55:39 +0100
+
+
+Started DELETE "/users/sign_out" for ::1 at 2015-05-11 15:55:40 +0100
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"g7Bdl63v/UszKl72ONVGbX1jdKWHeeRZTr9zOR+mCcV3U7D9UbjRHNONYmV1J1Bhgs/+KeXitNEP16l3kA631A=="}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 6]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2015-05-11 15:55:40 +0100
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 26ms (Views: 24.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2015-05-11 15:55:42 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 32ms (Views: 30.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2015-05-11 16:08:38 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 37ms (Views: 35.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-05-11 16:08:39 +0100
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-05-11 16:08:39 +0100
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-11 16:08:39 +0100
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-11 16:08:39 +0100
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-05-11 16:08:39 +0100
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-05-11 16:08:39 +0100
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-05-11 16:08:39 +0100

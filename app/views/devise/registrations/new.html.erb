@@ -28,10 +28,7 @@
 
   <div class="field">
     <%= f.label :gender %><br />
-    <%= f.label :gender, 'male', :value => 0 %>
-    <%= f.radio_button :gender, 'male' %>
-    <%= f.label :gender, 'female', :value => 1 %>
-    <%= f.radio_button :gender, 'female' %>
+    <%= f.select :gender, options_for_select([['Male', 0], ['Female', 1]]) %>
   </div>
 
   <div class="field">
@@ -41,7 +38,7 @@
 
   <div class="field">
     <%= f.label :fitness_level %><br />
-    <%= f.select :fitness_level, options_for_select(%w[Beginner Intermediate Advanced]) %>
+    <%= f.select :fitness_level, options_for_select([['Beginner', 0], ['Intermediate', 1], ['Advanced', 2]]) %>
   </div>
 
   <div class="field">

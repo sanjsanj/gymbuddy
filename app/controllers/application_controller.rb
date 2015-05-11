@@ -8,7 +8,11 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) do |u| u.permit({ roles: []}, :fitness_bio, :name, :gender, :fitness_level, :image)
-    end
+    devise_parameter_sanitizer.for(:sign_up) << :fitness_bio # do |u| u.permit({ roles: []}, :fitness_bio, :name, :gender, :fitness_level, :image)
+    # end
+    devise_parameter_sanitizer.for(:sign_up) << :name
+    devise_parameter_sanitizer.for(:sign_up) << :gender
+    devise_parameter_sanitizer.for(:sign_up) << :fitness_level
+    devise_parameter_sanitizer.for(:sign_up) << :image
   end
 end
