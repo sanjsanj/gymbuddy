@@ -22,8 +22,31 @@
   </div>
 
   <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :gender %><br />
+    <%= f.label :gender, 'male', :value => 0 %>
+    <%= f.radio_button :gender, 'male' %>
+    <%= f.label :gender, 'female', :value => 1 %>
+    <%= f.radio_button :gender, 'female' %>
+  </div>
+
+  <div class="field">
     <%= f.label :fitness_bio %><br />
     <%= f.text_field :fitness_bio %>
+  </div>
+
+  <div class="field">
+    <%= f.label :fitness_level %><br />
+    <%= f.select :fitness_level, options_for_select(%w[Beginner Intermediate Advanced]) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :image %><br />
+    <%= f.file_field :image %>
   </div>
 
   <div class="actions">
