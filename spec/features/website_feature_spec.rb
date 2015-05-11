@@ -18,5 +18,12 @@ feature 'Website homepage' do
       visit '/'
       expect(current_path).to eq '/posts'
     end
+
+    scenario 'can send a message to gym buddies' do
+      sign_up
+      create_post
+      click_link 'Show'
+      expect(page).to have_link 'Send Message'      
+    end
   end
 end

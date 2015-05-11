@@ -28,4 +28,13 @@ module UserHelper
     select date.strftime('%B'), :from => "#{field}_2i" #month
     select date.strftime('%d'), :from => "#{field}_3i" #day
   end
+
+  def create_post
+    visit '/posts'
+    click_link 'New Post'
+    select 'Swimming', from: 'Activity'
+    select 'Virgin Active Molegate', from: 'Location'
+    select_date_and_time(DateTime.now)
+    click_button 'Create Post'
+  end
 end

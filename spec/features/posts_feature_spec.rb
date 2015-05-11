@@ -35,12 +35,7 @@ feature 'Posts' do
   context 'When viewing a post' do
     scenario 'it shows user profile details of post creator' do
       sign_up
-      visit '/posts'
-      click_link 'New Post'
-      select 'Swimming', from: 'Activity'
-      select 'Virgin Active Molegate', from: 'Location'
-      select_date_and_time(DateTime.now)
-      click_button 'Create Post'
+      create_post
       click_link 'Show'
       expect(page).to have_content 'George'
       expect(page).to have_content 'Male'
@@ -53,12 +48,7 @@ feature 'Posts' do
     # I know this is hideous, don't judge me, Sanjay
     scenario 'it only allows you to delete posts you made' do
       sign_up
-      visit '/posts'
-      click_link 'New Post'
-      select 'Swimming', from: 'Activity'
-      select 'Virgin Active Molegate', from: 'Location'
-      select_date_and_time(DateTime.now)
-      click_button 'Create Post'
+      create_post
       expect(page).to have_content 'Destroy'
       visit '/'
       click_link 'Sign out'

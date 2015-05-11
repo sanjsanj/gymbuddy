@@ -52,5 +52,9 @@
   <%= @user.fitness_bio %>
 </p>
 
+<div>
+  <%= mail_to current_user.email, 'Send Message' %>
+</div>
+
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
