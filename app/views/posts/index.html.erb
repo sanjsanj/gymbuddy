@@ -14,13 +14,13 @@
   </thead>
 
   <tbody>
-  <% if @posts.any? %> 
+  <% if @posts.any? %>
     <% @posts.each do |post| %>
       <tr>
         <td><%= post.activity %></td>
         <td><%= post.location %></td>
-        <td><%= post.time %></td>
-        <td><%= post.day %></td>
+        <td><%= post.try(:time).try(:strftime, "%H:%M") %></td>
+        <td><%= post.try(:day).try(:strftime, "%A %B %-d") %></td>
         <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
