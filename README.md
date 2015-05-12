@@ -1,1 +1,4 @@
 # gymbuddy
+
+travis
+coveralls
