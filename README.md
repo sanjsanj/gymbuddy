@@ -67,5 +67,40 @@ Development Blog:
 Tests:
 ------
 
+```
+WelcomeController
+  returns http success
+
+User
+  has many posts
+
+Posts Feature
+  Website on initialization
+    should have no posts
+    should display prompt to create new posts
+  When creating a post
+    it shows the post
+    users who are not signed in cannot post
+  When viewing a post
+    it shows user profile details of post creator
+  When deleting a post
+    you cannot delete a post that isn't yours
+    you can delete your own post
+
+User Feature
+  User signs up and makes profile
+    User signs up
+
+Website Feature
+  When user not signed in
+    should direct to landing page and have welcome message
+    should not be able to view post details
+  When user is signed in
+    should direct to posts page
+    should be able to view post details
+    can send a message to gym buddies
+
+15 examples, 0 failures
+```
 
 coverage ss
