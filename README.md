@@ -2,15 +2,22 @@
 
 [![Build Status](https://travis-ci.org/sanjsanj/gymbuddy.svg)](https://travis-ci.org/sanjsanj/gymbuddy) [![Coverage Status](https://coveralls.io/repos/sanjsanj/gymbuddy/badge.svg?branch=master)](https://coveralls.io/r/sanjsanj/gymbuddy?branch=master)
 
+--------------
+
 ###[Gym Buddy on Heroku](http://gympal.herokuapp.com)
 
-video
+--------------
 
-screenshot
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/Svw4FDhcxw0/0.jpg)](http://www.youtube.com/watch?v=Svw4FDhcxw0)
+
+--------------
+
+![coveralls ss](https://github.com/sanjsanj/gymbuddy/blob/master/public/landing.png?raw=true)
 
 Specification:
 --------------
 
+Make stuff!
 
 User Stories:
 -------------
