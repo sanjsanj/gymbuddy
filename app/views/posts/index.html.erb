@@ -8,23 +8,22 @@
   <tbody>
   <% if @posts.any? %>
     <% @posts.each do |post| %>
-      <tr class=<%=User.find(post.user_id).gender%>>
-        <td><p><%=image_tag User.find(post.user_id).image.url(:thumb)%></p></td>
-        <td><%= post.activity %></td>
-        <td><%= post.location %></td>
-        <td><%= post.try(:time).try(:strftime, "%H:%M") %></td>
-        <td><%= post.try(:day).try(:strftime, "%A %B %-d") %></td>
+      <ul class=<%=User.find(post.user_id).gender%>>
+        <tr><%=image_tag User.find(post.user_id).image.url(:thumb)%></tr>
+
+        <tr>I am looking for a Gym Buddy at <strong><%= post.location %></strong>
+            I want to do <strong><%= post.activity %></strong> on <strong><%= post.day %></strong>
+            at <strong><%= post.time.strftime("%H:%M") %></strong></tr>
 
         <% if current_user %>
-        <td><%= link_to 'Show', post %></td>
+        <tr><%= link_to 'Show', post %></tr>
           <% if post.user_id == current_user.id %>
-            <td><%= link_to 'Edit', edit_post_path(post) %></td>
-            <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <tr><%= link_to 'Edit', edit_post_path(post) %></tr>
+            <tr><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
           <% end %>
         <% end %>
-
-        </td>
-      </tr>
+        </tr>
+      </ul>
     <% end %>
   <% else %>
     <p>No posts yet</p>

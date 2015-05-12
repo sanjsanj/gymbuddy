@@ -1,55 +1,29 @@
-<p id="notice"><%= notice %></p>
+
+<ul>
+  <tr><%=image_tag @user.image.url(:thumb)%></tr>
+
+  <tr>
+    I am looking for a Gym Buddy at <strong><%= @post.location %></strong>
+    I want to do <strong><%= @post.activity %></strong> on <strong><%= @post.day %></strong>
+    at <strong><%= @post.time.strftime("%H:%M") %></strong>
+  </tr>
+</ul>
 
 <p>
-  <strong>Activity:</strong>
-  <%= @post.activity %>
-</p>
-
-<p>
-  <strong>Location:</strong>
-  <%= @post.location %>
-</p>
-
-<p>
-  <strong>Time:</strong>
-  <%= @post.time.strftime("%H:%M") %>
-</p>
-
-<p>
-  <strong>Day:</strong>
-  <%= @post.day %>
-</p>
-
-<p><%=image_tag @user.image.url(:thumb)%></p>
-
-<p>
-  <strong>GymPal Name:</strong>
-  <%= @user.name %>
-</p>
-
-<p>
-  <strong><%=@user.name%>'s Gender:</strong>
-  <% if @user.gender == 0  %>
-    Male
-  <% else %>
-    Female
-  <% end %>
-</p>
-
-<p>
-  <strong><%=@user.name%>'s Fitness Level:</strong>
+  Gym Buddy <strong><%= @user.name %></strong>:<br>
+  Is a <% if @user.gender == 0  %>
+        Male
+      <% else %>
+        Female
+      <% end %><br>
   <% if @user.fitness_level == 0%>
-    Beginner
-  <% elsif @user.fitness_level == 1 %>
-    Intermediate
-  <% else %>
-    Advanced
-  <% end %>
-</p>
-
-<p>
-  <strong><%=@user.name%>'s Fitness Bio:</strong>
-  <%= @user.fitness_bio %>
+      Beginner
+    <% elsif @user.fitness_level == 1 %>
+      Intermediate
+    <% else %>
+      Advanced
+    <% end %> Fitness Level <br>
+  Bio: <%= @user.fitness_bio %>
 </p>
 
 <div>
@@ -57,4 +31,4 @@
 </div>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<%= link_to 'Back to Requests', posts_path %>
