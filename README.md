@@ -103,4 +103,4 @@ Website Feature
 15 examples, 0 failures
 ```
 
-coverage ss
+![coveralls ss](https://github.com/sanjsanj/gymbuddy/blob/master/public/week9_gb_cc.png?raw=true)
