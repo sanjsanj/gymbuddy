@@ -1,13 +1,25 @@
 $(document).ready(function() {
   var constant = 0;
   var first = true;
-  var gender_check = function() {
-    if(first !== true) {
-      if (constant === 1) {
-        $('.Female').hide();
-      } else if(constant === 0) {
-        $('.Male').hide();
-      };
+  // var gender_check = function() {
+  //   if(first !== true) {
+  //     if (constant === 1) {
+  //       $('.Female').hide();
+  //     } else if(constant === 0) {
+  //       $('.Male').hide();
+  //     };
+  //   };
+  // };
+
+  var gender_menu_check = function() {
+    var item = "";
+    $("#gender_menu option:selected").each(function() {
+      item = $(this).text();
+    });
+    if(item === "Male") {
+      $('.Female').hide();
+    } else if(item === 'Female') {
+      $('.Male').hide();
     };
   };
 
@@ -51,32 +63,49 @@ $(document).ready(function() {
     } else if(item === 'Fitness Freaks') {
       $('.Active').hide();
       $('.Fitness').show();
+    } else {
+      $('.Active').show();
+      $('.Fitness').show();
     };
-    gender_check();
+    gender_menu_check();
     fitness_check();
   });
 
-  $("#gender").click(function() {
-    if(constant === 0) {
+  $("#gender_menu").change(function () {
+    var item = "";
+    $("#gender_menu option:selected").each(function() {
+      item = $(this).text();
+    });
+    if(item === "Male") {
       $('.Female').hide();
       $('.Male').show();
-      constant = 1;
-      $("#gender").text('Male')
-    } else if(constant === 1) {
-      $('.Male').hide();
+    } else if(item === 'Female') {
       $('.Female').show();
-      constant = 0;
-      $("#gender").text('Female')
+      $('.Male').hide();
+    } else if(item === 'All') {
+      $('.Female').show();
+      $('.Male').show();
     };
     fitness_check();
     gym_check();
-    first = false;
   });
 
-  $("#reset").click(function() {
-    $('.Male').show();
-    $('.Female').show();
-  });
+  // $("#gender").click(function() {
+  //   if(constant === 0) {
+  //     $('.Female').hide();
+  //     $('.Male').show();
+  //     constant = 1;
+  //     $("#gender").text('Male')
+  //   } else if(constant === 1) {
+  //     $('.Male').hide();
+  //     $('.Female').show();
+  //     constant = 0;
+  //     $("#gender").text('Female')
+  //   };
+  //   fitness_check();
+  //   gym_check();
+  //   first = false;
+  // });
 
   $("#fitness_level").change(function () {
     var item = "";
@@ -95,8 +124,12 @@ $(document).ready(function() {
       $('.Beginner').hide();
       $('.Intermidate').hide();
       $('.Advanced').show();
+    } else {
+      $('.Beginner').show();
+      $('.Intermidate').show();
+      $('.Advanced').show();
     };
-    gender_check();
+    gender_menu_check();
     gym_check();
   });
 });
