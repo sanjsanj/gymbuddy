@@ -1,22 +1,33 @@
-<%= link_to 'New Post', new_post_path %><br>
-
-<button class='btn btn-default' id='gender'>Gender</button>
-<div id='post_gender'></div>
-<br>
-<select id="fitness_level" multiple="Multiple">
-  <option>Beginner</option>
-  <option>Intermidate</option>
-  <option>Advanced</option>
-</select>
-<div id='selected_option'></div>
-
-<select id="gym" multiple="Multiple">
-  <option>Virgin Active</option>
-  <option>Fitness Freaks</option>
-</select>
-<div id='gym_select'></div>
-
 <h1>Buddy Requests</h1>
+<h2>Make a <%= link_to 'New Post', new_post_path %></h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>
+        <button class='btn btn-default' id='gender'>Gender</button>
+      </th>
+      <th>
+        <div id='post_gender'></div>
+      </th>
+      <th>
+        <select id="fitness_level" class='btn btn-default'>
+          <option>Select a fitness level</option>
+          <option>Beginner</option>
+          <option>Intermidate</option>
+          <option>Advanced</option>
+        </select>
+      </th>
+      <th>
+        <select id="gym" class='btn btn-default'>
+          <option>Select a gym</option>
+          <option>Virgin Active</option>
+          <option>Fitness Freaks</option>
+        </select>
+      </th>
+    </tr>
+  </thead>
+</table>
 
 <table>
   <thead>
@@ -42,7 +53,7 @@
           Fitness'
         <% end %>
         '>
-        <td><%=image_tag User.find(post.user_id).image.url(:thumb)%></td>
+        <td><p><%=image_tag User.find(post.user_id).image.url(:thumb)%></p></td>
 
         <td>I am looking for a Gym Buddy at <strong><%= post.location %></strong>
             I want to do <strong><%= post.activity %></strong> on <strong><%= post.day %></strong>

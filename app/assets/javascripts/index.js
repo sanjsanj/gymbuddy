@@ -5,10 +5,8 @@ $(document).ready(function() {
     if(first !== true) {
       if (constant === 1) {
         $('.Female').hide();
-        $("#post_gender").text('Male');
       } else if(constant === 0) {
         $('.Male').hide();
-        $("#post_gender").text('Female');
       };
     };
   };
@@ -18,7 +16,6 @@ $(document).ready(function() {
     $("#fitness_level option:selected").each(function() {
       item = $(this).text();
     });
-    $('#selected_option').text(item);
     if(item === "Beginner") {
       $('.Intermidate').hide();
       $('.Advanced').hide();
@@ -36,7 +33,6 @@ $(document).ready(function() {
     $("#gym option:selected").each(function() {
       item = $(this).text();
     });
-    $('#gym_select').text(item);
     if(item === "Virgin Active") {
       $('.Fitness').hide();
     } else if(item === 'Fitness Freaks') {
@@ -49,7 +45,6 @@ $(document).ready(function() {
     $("#gym option:selected").each(function() {
       item = $(this).text();
     });
-    $('#gym_select').text(item);
     if(item === "Virgin Active") {
       $('.Active').show();
       $('.Fitness').hide();
@@ -66,12 +61,12 @@ $(document).ready(function() {
       $('.Female').hide();
       $('.Male').show();
       constant = 1;
-      $("#post_gender").text('Male');
+      $("#gender").text('Male')
     } else if(constant === 1) {
       $('.Male').hide();
       $('.Female').show();
       constant = 0;
-      $("#post_gender").text('Female');
+      $("#gender").text('Female')
     };
     fitness_check();
     gym_check();
@@ -83,7 +78,6 @@ $(document).ready(function() {
     $("#fitness_level option:selected").each(function() {
       item = $(this).text();
     });
-    $('#selected_option').text(item);
     if(item === "Beginner") {
       $('.Beginner').show();
       $('.Intermidate').hide();
