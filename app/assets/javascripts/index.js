@@ -15,7 +15,7 @@ $(document).ready(function() {
 
   var fitness_check = function() {
     var item = "";
-    $("select option:selected").each(function() {
+    $("#fitness_level option:selected").each(function() {
       item = $(this).text();
     });
     $('#selected_option').text(item);
@@ -31,6 +31,36 @@ $(document).ready(function() {
     };
   };
 
+  var gym_check = function() {
+    var item = "";
+    $("#gym option:selected").each(function() {
+      item = $(this).text();
+    });
+    $('#gym_select').text(item);
+    if(item === "Virgin Active") {
+      $('.Fitness').hide();
+    } else if(item === 'Fitness Freaks') {
+      $('.Active').hide();
+    };
+  };
+
+  $("#gym").change(function() {
+    var item = "";
+    $("#gym option:selected").each(function() {
+      item = $(this).text();
+    });
+    $('#gym_select').text(item);
+    if(item === "Virgin Active") {
+      $('.Active').show();
+      $('.Fitness').hide();
+    } else if(item === 'Fitness Freaks') {
+      $('.Active').hide();
+      $('.Fitness').show();
+    };
+    gender_check();
+    fitness_check();
+  });
+
   $("#gender").click(function() {
     if(constant === 0) {
       $('.Female').hide();
@@ -44,12 +74,13 @@ $(document).ready(function() {
       $("#post_gender").text('Female');
     };
     fitness_check();
+    gym_check();
     first = false;
   });
 
   $("#fitness_level").change(function () {
     var item = "";
-    $("select option:selected").each(function() {
+    $("#fitness_level option:selected").each(function() {
       item = $(this).text();
     });
     $('#selected_option').text(item);
@@ -67,5 +98,6 @@ $(document).ready(function() {
       $('.Advanced').show();
     };
     gender_check();
+    gym_check();
   });
 });

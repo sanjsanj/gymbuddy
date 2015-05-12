@@ -1,3 +1,5 @@
+<%= link_to 'New Post', new_post_path %><br>
+
 <button class='btn btn-default' id='gender'>Gender</button>
 <div id='post_gender'></div>
 <br>
@@ -7,6 +9,12 @@
   <option>Advanced</option>
 </select>
 <div id='selected_option'></div>
+
+<select id="gym" multiple="Multiple">
+  <option>Virgin Active</option>
+  <option>Fitness Freaks</option>
+</select>
+<div id='gym_select'></div>
 
 <h1>Buddy Requests</h1>
 
@@ -21,11 +29,16 @@
           'Female
         <% end %>
         <% if User.find(post.user_id).fitness_level == 0%>
-          Beginner'
+          Beginner
         <% elsif User.find(post.user_id).fitness_level == 1 %>
-          Intermidate'
+          Intermidate
         <% else %>
-          Advanced'
+          Advanced
+        <% end %>
+        <% if post.location == 'Virgin Active Molegate' %>
+          Active'
+        <% else %>
+          Fitness'
         <% end %>
         '>
         <td><p><%=image_tag User.find(post.user_id).image.url(:thumb)%></p></td>
@@ -51,5 +64,3 @@
   </tbody>
 </table>
 <br>
-
-<%= link_to 'New Post', new_post_path %>
