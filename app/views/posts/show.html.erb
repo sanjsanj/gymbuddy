@@ -1,33 +1,51 @@
-<ul>
-  <tr><%=image_tag @user.image.url(:thumb)%></tr>
-
-  <tr>
-    I am looking for a Gym Buddy at <strong><%= @post.location %></strong>
-    I want to do <strong><%= @post.activity %></strong> on <strong><%= @post.day %></strong>
-    at <strong><%= @post.time.strftime("%H:%M") %></strong>
-  </tr>
-</ul>
-
-<p>
-  Gym Buddy <strong><%= @user.name %></strong>:<br>
-  Is a <% if @user.gender == 0  %>
-        Male
-      <% else %>
-        Female
-      <% end %><br>
-  <% if @user.fitness_level == 0%>
-      Beginner
-    <% elsif @user.fitness_level == 1 %>
-      Intermediate
-    <% else %>
-      Advanced
-    <% end %> Fitness Level <br>
-  Bio: <%= @user.fitness_bio %>
-</p>
-
-<div>
-  <%= mail_to @user.email, 'Send Message' %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <div class="panel-title">
+    <h1>Buddy Request -- Gym Buddy Details</h1>
+  </div>
 </div>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back to Requests', posts_path %>
+
+<div class="panel-body">
+  <div class="media">
+    <ul>
+      <tr ><%=image_tag @user.image.url(:thumb)%></tr>
+
+      <tr class='text-center'>
+        I am looking for a Gym Buddy at <strong><%= @post.location %></strong>
+        I want to do <strong><%= @post.activity %></strong> on <strong><%= @post.day %></strong>
+        at <strong><%= @post.time.strftime("%H:%M") %></strong>
+      </tr>
+    </ul>
+<br><br>
+  <p class='text-center'>
+    Gym Buddy <strong><%= @user.name %></strong>:<br>
+    Is a <% if @user.gender == 0  %>
+          Male
+        <% else %>
+          Female
+        <% end %><br>
+    <% if @user.fitness_level == 0%>
+        Beginner
+      <% elsif @user.fitness_level == 1 %>
+        Intermediate
+      <% else %>
+        Advanced
+      <% end %> Fitness Level <br>
+    Bio: <%= @user.fitness_bio %>
+  </p>
+
+    <div>
+      <%= mail_to @user.email, 'Send Message' %>
+    </div>
+  </div>
+</div>
+
+  <div class="panel-footer">
+    <%= link_to 'Edit', edit_post_path(@post) %> |
+    <%= link_to 'Back to Requests', posts_path %>
+  </div>
+</div>
+
+
+
