@@ -1,10 +1,5 @@
 <button class='btn' id='gender'>Gender</button>
-
-<script>
-  $( "#gender" ).click(function() {
-    alert('Clicked');
-  });
-</script>
+<div id='post_gender'></div>
 
 <h1>Buddy Requests</h1>
 
@@ -13,7 +8,7 @@
   <tbody>
   <% if @posts.any? %>
     <% @posts.each do |post| %>
-      <tr>
+      <tr class=<%=User.find(post.user_id).gender%>>
         <td><p><%=image_tag User.find(post.user_id).image.url(:thumb)%></p></td>
         <td><%= post.activity %></td>
         <td><%= post.location %></td>

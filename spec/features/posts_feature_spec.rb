@@ -47,7 +47,10 @@ feature 'Posts' do
       create_post
       click_button 'Gender'
       expect(page).to have_content 'Swimming'
-      expect(page).not_to have_content 'Running'
+      # find('Swimming').visible?
+      page.all(".0", :visible => false).value
+      # expect(page).to have_css('.class', :visible => false)
+      # expect(page).not_to have_content 'Running'
     end
   end
 
