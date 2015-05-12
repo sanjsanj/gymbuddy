@@ -1,12 +1,12 @@
 module UserHelper
 
-  def sign_up
+  def sign_up(email = 't@t.com', gender = 'Male')
     visit '/users/sign_up'
-    fill_in 'Email', with: 't@t.com'
+    fill_in 'Email', with: email
     fill_in 'Password', with: '12345678'
     fill_in 'Password confirmation', with: '12345678'
     fill_in 'Name', with: 'George'
-    select('Male', :from => 'Gender')
+    select(gender, :from => 'Gender')
     fill_in 'Fitness bio', with: 'Powerlifting, also light golf'
     select('Beginner', :from => 'Fitness level')
     attach_file('user_image', 'spec/features/images/me.jpg')
@@ -29,10 +29,10 @@ module UserHelper
     select date.strftime('%d'), :from => "#{field}_3i" #day
   end
 
-  def create_post
+  def create_post(activity = 'Swimming')
     visit '/posts'
     click_link 'New Post'
-    select 'Swimming', from: 'Activity'
+    select activity, from: 'Activity'
     select 'Virgin Active Molegate', from: 'Location'
     select_date_and_time(DateTime.now)
     click_button 'Create Post'
