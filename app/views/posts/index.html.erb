@@ -11,12 +11,19 @@
   <table style='margin-left: auto; margin-right: auto'>
     <thead>
       <tr>
-        <th style='padding-right: 10px'>
+<!--         <th style='padding-right: 10px'>
           <button class='btn btn-default' id='gender'>Gender</button>
+        </th> -->
+        <th style='padding-right: 10px'>
+          <select id="gender_menu" class='btn btn-default'>
+            <option>All</option>
+            <option>Female</option>
+            <option>Male</option>
+          </select>
         </th>
         <th style='padding-right: 10px'>
           <select id="fitness_level" class='btn btn-default'>
-            <option>Select a fitness level</option>
+            <option>All Fitness Levels</option>
             <option>Beginner</option>
             <option>Intermidate</option>
             <option>Advanced</option>
@@ -24,13 +31,10 @@
         </th>
         <th style='padding-right: 10px'>
           <select id="gym" class='btn btn-default'>
-            <option>Select a gym</option>
+            <option>All Gyms</option>
             <option>Virgin Active</option>
             <option>Fitness Freaks</option>
           </select>
-        </th>
-        <th style='padding-right: 10px'>
-          <button class='btn btn-default' id='reset'>Reset Search</button>
         </th>
       </tr>
     </thead>
