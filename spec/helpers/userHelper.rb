@@ -22,13 +22,6 @@ module UserHelper
     select date.strftime('%M'), :from => "post_time_5i" #minute
   end
 
-  def select_date(date, options = {})
-    field = options[:from]
-    select date.strftime('%Y'), :from => "#{field}_1i" #year
-    select date.strftime('%B'), :from => "#{field}_2i" #month
-    select date.strftime('%d'), :from => "#{field}_3i" #day
-  end
-
   def create_post(activity = 'Swimming')
     visit '/posts'
     click_link 'New Post'
