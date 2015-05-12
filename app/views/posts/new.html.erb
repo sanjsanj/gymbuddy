@@ -1,5 +1,10 @@
-<h1>New Post</h1>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1>Create a Gym Buddy request</h1>
+    <%= render 'form' %>
+  </div>
+</div>
 
-<%= render 'form' %>
-
-<%= link_to 'Back', posts_path %>
+<div class="panel-footer">
+  <%= link_to 'Back', posts_path %>
+</div>
