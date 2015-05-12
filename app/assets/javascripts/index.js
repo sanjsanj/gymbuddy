@@ -73,6 +73,11 @@ $(document).ready(function() {
     first = false;
   });
 
+  $("#reset").click(function() {
+    $('.Male').show();
+    $('.Female').show();
+  });
+
   $("#fitness_level").change(function () {
     var item = "";
     $("#fitness_level option:selected").each(function() {
