@@ -54,7 +54,7 @@ feature 'Posts' do
 
   context 'when deleting a post' do
     # I know this is hideous, don't judge me, Sanjay
-    scenario 'it only allows you to delete posts you made' do
+    scenario 'you cannot delete a post that isn\'t yours' do
       sign_up
       create_post
       expect(page).to have_content 'Destroy'
@@ -67,6 +67,13 @@ feature 'Posts' do
       click_button 'Sign up'
       visit '/posts'
       expect(page).not_to have_content 'Destroy'
+    end
+
+    scenario 'you can delete your own psot' do
+      sign_up
+      create_post
+      click_link 'Destroy'
+      expect(page).to have_content 'Post was successfully destroyed'
     end
   end
 end

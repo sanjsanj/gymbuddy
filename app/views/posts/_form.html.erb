@@ -1,3 +1,4 @@
+<div class="panel-body">
 <%= form_for(@post) do |f| %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
@@ -11,23 +12,24 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :activity %><br>
-    <%= f.select :activity, ["Swimming", "Running", "Yoga", "Boxing"] %>
+    <%= f.select :activity, ["Swimming", "Running", "Yoga", "Boxing"], class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :location %><br>
-    <%= f.select :location, ["Virgin Active Molegate", "Fitness for Freaks"] %>
+    <%= f.select :location, ["Virgin Active Molegate", "Fitness for Freaks"], class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :time %><br>
     <%= f.time_select "time" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :day %><br>
-    <%= f.date_select "day" %>
+    <%= f.date_select "day", class: "form-control" %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group" >
+    <%= f.submit "Create Post", class: "btn btn-default"  %>
   </div>
 <% end %>
+</div>

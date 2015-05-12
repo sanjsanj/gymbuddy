@@ -1,54 +1,62 @@
-<h2>Sign up</h2>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1>Gym Buddy Sign up</h1>
 
+<div class="panel-body">
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.email_field :email, autofocus: true, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :password %>
     <% if @validatable %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :gender %><br />
-    <%= f.select :gender, options_for_select([['Male', 0], ['Female', 1]]) %>
+    <%= f.select :gender, options_for_select([['Male', 0], ['Female', 1]]), class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :fitness_bio %><br />
-    <%= f.text_field :fitness_bio %>
+    <%= f.text_field :fitness_bio, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :fitness_level %><br />
-    <%= f.select :fitness_level, options_for_select([['Beginner', 0], ['Intermediate', 1], ['Advanced', 2]]) %>
+    <%= f.select :fitness_level, options_for_select([['Beginner', 0], ['Intermediate', 1], ['Advanced', 2]]), class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :image %><br />
-    <%= f.file_field :image %>
+    <%= f.file_field :image, class: "form-control" %>
+  </div>
+  <br>
+  <div class="form-group">
+    <%= f.submit "Sign up", class: "btn btn-default" %>
+  </div>
+    <% end %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up", class: "btn btn-default"%>
+  <div class="panel-footer">
+    <%= render "devise/shared/links" %>
   </div>
-<% end %>
+</div>
 
-<%= render "devise/shared/links" %>
