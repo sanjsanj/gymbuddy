@@ -49,6 +49,7 @@ Tools:
 ------
 
 Testing | Application | Other
+--- | --- | ---
 Rspec | Rails | HTML5
 Capybara | Ruby | CSS3
 Byebug | JQuery | Bootstrap
