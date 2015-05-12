@@ -69,29 +69,27 @@ Tests:
 
 ```
 WelcomeController
-  returns http success
+  GET #index
+    returns http success
 
-User
-  has many posts
-
-Posts Feature
+Posts
   Website on initialization
     should have no posts
-    should display prompt to create new posts
+    should display a prompt to create new posts
   When creating a post
     it shows the post
     users who are not signed in cannot post
   When viewing a post
     it shows user profile details of post creator
-  When deleting a post
+    it can filter by gender (PENDING: Temporarily disabled with xscenario)
+  when deleting a post
     you cannot delete a post that isn't yours
-    you can delete your own post
+    you can delete your own psot
 
-User Feature
-  User signs up and makes profile
-    User signs up
+User signs up and makes profile
+  User signs up
 
-Website Feature
+Website homepage
   When user not signed in
     should direct to landing page and have welcome message
     should not be able to view post details
@@ -100,7 +98,10 @@ Website Feature
     should be able to view post details
     can send a message to gym buddies
 
-15 examples, 0 failures
+User
+  should have many posts
+
+16 examples, 0 failures
 ```
 
 ![coveralls ss](https://github.com/sanjsanj/gymbuddy/blob/master/public/week9_gb_cc.png?raw=true)
