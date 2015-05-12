@@ -39,7 +39,7 @@ feature 'Posts' do
       expect(page).to have_content 'Powerlifting'
     end
 
-    scenario 'it can filter by gender' do
+    xscenario 'it can filter by gender' do
       sign_up('g@g.com', 'Female')
       create_post('Running')
       click_link 'Sign out'
@@ -47,10 +47,8 @@ feature 'Posts' do
       create_post
       click_button 'Gender'
       expect(page).to have_content 'Swimming'
-      # find('Swimming').visible?
-      page.all(".0", :visible => false).value
       # expect(page).to have_css('.class', :visible => false)
-      # expect(page).not_to have_content 'Running'
+      expect(page).not_to have_content 'Running'
     end
   end
 
