@@ -38,6 +38,18 @@ feature 'Posts' do
       expect(page).to have_content 'Beginner'
       expect(page).to have_content 'Powerlifting'
     end
+
+    xscenario 'it can filter by gender' do
+      sign_up('g@g.com', 'Female')
+      create_post('Running')
+      click_link 'Sign out'
+      sign_up
+      create_post
+      click_button 'Gender'
+      expect(page).to have_content 'Swimming'
+      # expect(page).to have_css('.class', :visible => false)
+      expect(page).not_to have_content 'Running'
+    end
   end
 
   context 'when deleting a post' do

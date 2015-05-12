@@ -6,7 +6,7 @@ feature 'Website homepage' do
 
     scenario 'should direct to landing page and have welcome message' do
       visit '/'
-      expect(page).to have_content 'Welcome'
+      expect(page).to have_content 'Find Your Gym'
       expect(current_path).to eq '/'
     end
 

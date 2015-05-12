@@ -1,36 +1,81 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Buddy Requests</h1>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <div class="panel-title">
+    <h1>Buddy Requests</h1>
+    <h4>Make a <%= link_to 'New Post', new_post_path %></h4>
+  </div>
+</div>
 
-<table>
-  <thead>
-  </thead>
-  <tbody>
-  <% if @posts.any? %>
-    <% @posts.each do |post| %>
+<div class="panel-body">
+  <table style='margin-left: auto; margin-right: auto'>
+    <thead>
       <tr>
-        <td><p><%=image_tag User.find(post.user_id).image.url(:thumb)%></p></td>
-        <td><%= post.activity %></td>
-        <td><%= post.location %></td>
-        <td><%= post.try(:time).try(:strftime, "%H:%M") %></td>
-        <td><%= post.try(:day).try(:strftime, "%A %B %-d") %></td>
-
-        <% if current_user %>
-        <td><%= link_to 'Show', post %></td>
-          <% if post.user_id == current_user.id %>
-            <td><%= link_to 'Edit', edit_post_path(post) %></td>
-            <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-          <% end %>
-        <% end %>
-
-        </td>
+        <th style='padding-right: 10px'>
+          <button class='btn btn-default' id='gender'>Gender</button>
+        </th>
+        <th style='padding-right: 10px'>
+          <select id="fitness_level" class='btn btn-default'>
+            <option>Select a fitness level</option>
+            <option>Beginner</option>
+            <option>Intermidate</option>
+            <option>Advanced</option>
+          </select>
+        </th>
+        <th style='padding-right: 10px'>
+          <select id="gym" class='btn btn-default'>
+            <option>Select a gym</option>
+            <option>Virgin Active</option>
+            <option>Fitness Freaks</option>
+          </select>
+        </th>
       </tr>
-    <% end %>
-  <% else %>
-    <p>No posts yet</p>
-  <% end %>
-  </tbody>
-</table>
-<br>
+    </thead>
+  </table>
 
-<%= link_to 'New Post', new_post_path %>
+  <table>
+    <thead>
+    </thead>
+    <tbody>
+    <% if @posts.any? %>
+      <% @posts.each do |post| %>
+        <tr class=<% if User.find(post.user_id).gender == 0%> 
+            'Male
+          <% else %>
+            'Female
+          <% end %>
+          <% if User.find(post.user_id).fitness_level == 0%>
+            Beginner
+          <% elsif User.find(post.user_id).fitness_level == 1 %>
+            Intermidate
+          <% else %>
+            Advanced
+          <% end %>
+          <% if post.location == 'Virgin Active Molegate' %>
+            Active'
+          <% else %>
+            Fitness'
+          <% end %>
+          '>
+          <td style='padding-right: 10px'><p><%=image_tag User.find(post.user_id).image.url(:thumb)%></p></td>
+
+          <td style='padding-right: 10px'>I am looking for a Gym Buddy at <strong><%= post.location %></strong>
+              I want to do <strong><%= post.activity %></strong> on <strong><%= post.day %></strong>
+              at <strong><%= post.time.strftime("%H:%M") %></strong></td>
+
+          <% if current_user %>
+          <td style='padding-right: 10px'><%= link_to 'Show', post %></td>
+            <% if post.user_id == current_user.id %>
+              <td style='padding-right: 10px'><%= link_to 'Edit', edit_post_path(post) %></td>
+              <td style='padding-right: 10px'><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <% end %>
+          <% end %>
+          </tr>
+        </ul>
+      <% end %>
+    <% else %>
+      <p>No posts yet</p>
+    <% end %>
+    </tbody>
+  </table>
+</div>
