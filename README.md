@@ -160,7 +160,8 @@ From [here](http://stackoverflow.com/questions/5191405/change-a-column-type-from
 First rails g migrate like this:
 
 ```
-rails g migration change_date_format_in_my_table
+rails g migration change_day_format_in_posts_table
+rails g migration change_time_format_in_posts_table
 ```
 
 then in the db migrate file:
@@ -183,4 +184,32 @@ class ChangeTimeFormatInPostsTable < ActiveRecord::Migration
     add_column :posts, :time, :time
   end
 end
+```
+
+-----------------
+
+5 - **Travis-CI and Coveralls CC**
+
+Make a .travis.yml in the root and add to it:
+
+```
+rvm: '2.2.1'
+script: bundle exec rspec spec
+script:
+  - bundle exec bin/rake db:create
+  - bundle exec bin/rake db:migrate
+  - bundle exec rspec spec
+```
+
+For Coveralls CC to `spec/spech_helper.rb` at the top add:
+
+```
+require 'coveralls'
+Coveralls.wear!
+```
+
+and in the `gemfile`:
+
+```
+gem 'coveralls', require: false
 ```
