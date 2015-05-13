@@ -112,3 +112,29 @@ User
 ```
 
 ![coveralls ss](https://github.com/sanjsanj/gymbuddy/blob/master/public/week9_gb_cc.png?raw=true)
+
+-------------------
+
+What we learned:
+
+1 - **Teamwork!**
+
+It's enough of a challenge to pair effectively but working in small teams to hack an app together in less than 48 hours is new to all of us.  Getting our team cohesion and dynamics sorted was job one and it went great!  Major kudos to all of the team for really coming together and working our magnificent butts off.
+
+![img]()
+
+-------------
+
+2 - **Kanban boards.**
+
+We've heard of these mystical things but this was our first time actually using them and I have to admit they are very useful.
+
+![img]()
+
+---------------
+
+3 - **Rspec and Capybara are awesome!**
+
+It's so nice to come back to Ruby and Rspec.  Our first hurdle was how to select items from a date-picker for our tests.  We started using `select('Option', from: 'Select Box')
+`from [this awesome Capybara cheatsheet](https://www.launchacademy.com/codecabulary/learn-test-driven-development/rspec/capybara-cheat-sheet)
+
