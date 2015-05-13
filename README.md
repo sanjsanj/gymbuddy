@@ -115,7 +115,7 @@ User
 
 -------------------
 
-What we learned:
+##What we learned:
 
 1 - **Teamwork!**
 
@@ -136,5 +136,51 @@ We've heard of these mystical things but this was our first time actually using 
 3 - **Rspec and Capybara are awesome!**
 
 It's so nice to come back to Ruby and Rspec.  Our first hurdle was how to select items from a date-picker for our tests.  We started using `select('Option', from: 'Select Box')
-`from [this awesome Capybara cheatsheet](https://www.launchacademy.com/codecabulary/learn-test-driven-development/rspec/capybara-cheat-sheet)
+`from [this awesome Capybara cheatsheet](https://www.launchacademy.com/codecabulary/learn-test-driven-development/rspec/capybara-cheat-sheet).  But that didn't work out of the box.  Instead we found [this picker helper](http://markgandolfo.com/blog/2013/11/17/date-and-time-helper-with-rspec-and-capybara/) from which we got the inspiration to write our own version:
 
+```ruby
+def select_date_and_time(date, options = {})
+  field = options[:from]
+  select date.strftime('%Y'), :from => "post_day_1i" #year
+  select date.strftime('%B'), :from => "post_day_2i" #month
+  select date.strftime('%d'), :from => "post_day_3i" #day
+  select date.strftime('%H'), :from => "post_time_4i" #hour
+  select date.strftime('%M'), :from => "post_time_5i" #minute
+end
+```
+
+----------------
+
+4 - **ActiveRecord database issues**
+
+We dreaded it, we prayed it wouldn't happen, but it happened.  A lot!  In the early stages of development it was easy to simply rollback migrations but once our app was further along in development we had to target migrations for destruction and recreation.  We had used `text` as our date and time data types and had to change them to their dedicated types, `time` and `date`.
+
+From [here](http://stackoverflow.com/questions/5191405/change-a-column-type-from-date-to-datetime-during-ror-migration) we worked out these:
+
+First rails g migrate like this:
+
+```
+rails g migration change_date_format_in_my_table
+```
+
+then in the db migrate file:
+
+```ruby
+class ChangeDayFormatInPostsTable < ActiveRecord::Migration
+  def change
+    remove_column :posts, :day
+    add_column :posts, :day, :date
+  end
+end
+```
+
+and
+
+```ruby
+class ChangeTimeFormatInPostsTable < ActiveRecord::Migration
+  def change
+    remove_column :posts, :time
+    add_column :posts, :time, :time
+  end
+end
+```
