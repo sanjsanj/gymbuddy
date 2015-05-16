@@ -8,10 +8,6 @@
 
 --------------
 
-[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/Svw4FDhcxw0/0.jpg)](http://www.youtube.com/watch?v=Svw4FDhcxw0)
-
---------------
-
 ![coveralls ss](https://github.com/sanjsanj/gymbuddy/blob/master/public/landing.png?raw=true)
 
 Specification:
@@ -212,4 +208,17 @@ and in the `gemfile`:
 
 ```
 gem 'coveralls', require: false
+```
+
+-------------
+
+6 - **Heroku DB**
+
+Nothing really comes to mind with the deploy, it all went pretty smoothly.  The only issues we really had were related to the DB but it was pretty straight forward.
+
+Every few deploys we would get some errors and usually a [DB reset and migrate sorted them out](http://stackoverflow.com/questions/5450930/heroku-postgres-error-pgerror-error-relation-organizations-does-not-exist).
+
+```
+heroku run rake db:reset
+heroku run rake db:migrate
 ```
