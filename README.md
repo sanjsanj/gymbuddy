@@ -6,14 +6,15 @@
 
 ###Table of contents
 
-- [Specification](#)
-- [What is the Gymbuddy codebase](#)
-- [How to use this repo yourself](#)
-- [User stories](#)
-- [Tools](#)
-- [Development blog](#)
-- [Tests and healthcheck](#)
-- [What we learned](#)
+- [Specification](#specification)
+- [What is the Gymbuddy codebase](#what-is-the-gymbuddy-codebase)
+- [How to use this repo yourself](#how-to-use-this-repo-yourself)
+- [User stories](#user-stories)
+- [Tools](#tools)
+- [Development blog](#development-blog)
+- [Meet the team](#meet-the-team)
+- [Tests and healthcheck](#tests-and-healthcheck)
+- [What we learned](#what-we-learned)
 
 
 ![gymbuddy screenshot](https://github.com/sanjsanj/gymbuddy/blob/master/public/landing.png?raw=true)
@@ -93,6 +94,12 @@ PostgreSQL | | |
 
 
 ------
+
+###Meet the team
+
+WIP
+
+--------------
 
 ###Tests and healthcheck
 
