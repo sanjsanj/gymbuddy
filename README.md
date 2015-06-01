@@ -51,7 +51,7 @@ So I can stay informed
 Tools:
 ------
 
-Testing | Application | Other
+**Testing** | **Application** | **Other**
 --- | --- | ---
 Rspec | Rails | HTML5
 Capybara | Ruby | CSS3
@@ -182,6 +182,12 @@ class ChangeTimeFormatInPostsTable < ActiveRecord::Migration
 end
 ```
 
+Followed, of course, by the migration to the db.
+
+```
+bin/rake db:migrate
+```
+
 -----------------
 
 5 - **Travis-CI and Coveralls CC**
@@ -221,4 +227,10 @@ Every few deploys we would get some errors and usually a [DB reset and migrate s
 ```
 heroku run rake db:reset
 heroku run rake db:migrate
+```
+
+Another awesome little trick we picked up was to run PSQL on the remote Heroku PostgreSQL database.  So unbelievable easy.
+
+```
+heroku pg:psql
 ```
