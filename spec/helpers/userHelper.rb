@@ -1,7 +1,7 @@
 module UserHelper
 
   def sign_up(email = 't@t.com', gender = 'Male')
-    visit '/users/sign_up'
+    visit new_user_registration_path
     fill_in 'Email', with: email
     fill_in 'Password', with: '12345678'
     fill_in 'Password confirmation', with: '12345678'
@@ -15,15 +15,15 @@ module UserHelper
 
   def select_date_and_time(date, options = {})
     field = options[:from]
-    select date.strftime('%Y'), :from => "post_day_1i" #year
-    select date.strftime('%B'), :from => "post_day_2i" #month
-    select date.strftime('%d'), :from => "post_day_3i" #day
-    select date.strftime('%H'), :from => "post_time_4i" #hour
-    select date.strftime('%M'), :from => "post_time_5i" #minute
+    # select date.strftime('%Y'), :from => "post_day_1i" #year
+    # select date.strftime('%B'), :from => "post_day_2i" #month
+    # select date.strftime('%d'), :from => "post_day_3i" #day
+    # select date.strftime('%H'), :from => "post_time_4i" #hour
+    # select date.strftime('%M'), :from => "post_time_5i" #minute
   end
 
   def create_post(activity = 'Swimming')
-    visit '/posts'
+    visit posts_path
     click_link 'New Post'
     select activity, from: 'Activity'
     select 'Virgin Active Molegate', from: 'Location'
