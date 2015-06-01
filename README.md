@@ -51,14 +51,14 @@ So I can stay informed
 Tools:
 ------
 
-**Testing** | **Application** | **Other**
+**Application** | **Testing** | **Styling** | **Healthcheck**
 --- | --- | ---
-Rspec | Rails | HTML5
-Capybara | Ruby | CSS3
-Byebug | JQuery | Bootstrap
-Shoulda | Devise | Travis-CI
- | Paperclip | Coveralls
- | PostreSQL |
+Rails | Rspec | HTML5 | Travis-CI
+Ruby | Capybara | CSS3 | Coveralls CC
+JQuery | Byebug | Bootstrap | Code Climate
+Devise | Shoulda | |
+Paperclip | Launchy | |
+PostreSQL | | |
 
 Development Blog:
 -----------------
