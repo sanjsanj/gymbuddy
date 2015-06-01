@@ -1,34 +1,37 @@
-#Gym Buddy - A TDD Rails and PostgreSQL web app
+
+---------------
+
+#Gym Buddy  
+##A listings and contact website  
+###Made with care in TDD Rails and PostgreSQL
 
 [![Build Status](https://travis-ci.org/sanjsanj/gymbuddy.svg)](https://travis-ci.org/sanjsanj/gymbuddy) [![Coverage Status](https://coveralls.io/repos/sanjsanj/gymbuddy/badge.svg?branch=master)](https://coveralls.io/r/sanjsanj/gymbuddy?branch=master)
 
-Table of contents:
-
-WIP
 
 ![gymbuddy screenshot](https://github.com/sanjsanj/gymbuddy/blob/master/public/landing.png?raw=true)
 
+
 --------------
 
-##Specification:
+###Specification
 
 Gyms are scary and much better if you have a friend there with you. But what if no one you know goes to your gym? We need a website where you can search for people who go to your gym, so you can buddy up with them. You need to be able to make and search profiles, as well as send messages to people you're interested in buddying with.
 
 -----------------
 
-##What is Gymbuddy:
+###What is the Gymbuddy codebase
 
 WIP
 
 ------------------------------
 
-##How to use this repo yourself:
+###How to use this repo yourself
 
 WIP
 
 -------------
 
-##User stories:
+###User stories
 
 ```
 As a user
@@ -62,7 +65,7 @@ So I can stay informed
 
 ------
 
-##Tools:
+###Tools
 
 **Application** | **Testing** | **Styling** | **Healthcheck**  
 --- | --- | --- | ---  
@@ -71,11 +74,11 @@ Ruby | Capybara | CSS3 | Coveralls CC
 JQuery | Byebug | Bootstrap | Code Climate  
 Devise | Shoulda | |  
 Paperclip | Launchy | |  
-PostreSQL | | |  
+PostgreSQL | | |  
 
 -----------------
 
-##Development blog:
+###Development blog
 
 - [Day 1](http://sanjsanj.github.io/Week%209,%20Day%201/)
 - [Day 2](http://sanjsanj.github.io/Week%209,%20Day%202/)
@@ -83,7 +86,7 @@ PostreSQL | | |
 
 ------
 
-##Tests and healthcheck:
+###Tests and healthcheck
 
 ```
 WelcomeController
@@ -122,11 +125,15 @@ User
 16 examples, 0 failures
 ```
 
+![travis-CI screenshot]()
+
 ![coveralls screenshot](https://github.com/sanjsanj/gymbuddy/blob/master/public/week9_gb_cc.png?raw=true)
+
+![code climate screenshot]()
 
 -------------------
 
-##What we learned:
+###What we learned
 
 1 - **Teamwork!**
 
