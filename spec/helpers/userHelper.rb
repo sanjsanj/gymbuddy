@@ -13,13 +13,12 @@ module UserHelper
     click_button 'Sign up'
   end
 
-  def select_date_and_time(date, options = {})
-    field = options[:from]
-    # select date.strftime('%Y'), :from => "post_day_1i" #year
-    # select date.strftime('%B'), :from => "post_day_2i" #month
-    # select date.strftime('%d'), :from => "post_day_3i" #day
-    # select date.strftime('%H'), :from => "post_time_4i" #hour
-    # select date.strftime('%M'), :from => "post_time_5i" #minute
+  def select_date_and_time(date)
+    select date.strftime('%Y'), :from => "post_day_1i" #year
+    select date.strftime('%B'), :from => "post_day_2i" #month
+    select date.strftime('%k'), :from => "post_day_3i" #day
+    select date.strftime('%H'), :from => "post_time_4i" #hour
+    select date.strftime('%M'), :from => "post_time_5i" #minute
   end
 
   def create_post(activity = 'Swimming')
