@@ -1,11 +1,19 @@
-
----------------
-
 #Gym Buddy  
 ##A listings and contact website  
 ###Made with care in TDD Rails and PostgreSQL
 
 [![Build Status](https://travis-ci.org/sanjsanj/gymbuddy.svg)](https://travis-ci.org/sanjsanj/gymbuddy) [![Coverage Status](https://coveralls.io/repos/sanjsanj/gymbuddy/badge.svg?branch=master)](https://coveralls.io/r/sanjsanj/gymbuddy?branch=master)
+
+###Table of contents
+
+- [Specification](#)
+- [What is the Gymbuddy codebase](#)
+- [How to use this repo yourself](#)
+- [User stories](#)
+- [Tools](#)
+- [Development blog](#)
+- [Tests and healthcheck](#)
+- [What we learned](#)
 
 
 ![gymbuddy screenshot](https://github.com/sanjsanj/gymbuddy/blob/master/public/landing.png?raw=true)
