@@ -5,16 +5,16 @@ feature 'Website homepage' do
   context 'When user not signed in' do
 
     scenario 'should direct to landing page and have welcome message' do
-      visit '/'
+      visit root_path
       expect(page).to have_content 'Find Your Gym'
-      expect(current_path).to eq '/'
+      expect(current_path).to eq root_path
     end
 
     scenario 'should not be able to view post details' do
       sign_up
       create_post
       click_link 'Sign out'
-      visit '/posts'
+      visit posts_path
       expect(page).not_to have_link 'Show'
     end
   end
@@ -27,12 +27,12 @@ feature 'Website homepage' do
     end
 
     scenario 'should direct to posts page' do
-      visit '/'
-      expect(current_path).to eq '/posts'
+      visit root_path
+      expect(current_path).to eq posts_path
     end
 
     scenario 'should be able to view post details' do
-      visit '/posts'
+      visit posts_path
       expect(page).to have_link 'Show'
     end
 
