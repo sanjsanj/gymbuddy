@@ -1,22 +1,35 @@
-#Gym Buddy
+#Gym Buddy - A TDD Rails and PostgreSQL web app
 
 [![Build Status](https://travis-ci.org/sanjsanj/gymbuddy.svg)](https://travis-ci.org/sanjsanj/gymbuddy) [![Coverage Status](https://coveralls.io/repos/sanjsanj/gymbuddy/badge.svg?branch=master)](https://coveralls.io/r/sanjsanj/gymbuddy?branch=master)
 
+Table of contents:
+
+WIP
+
+![gymbuddy screenshot](https://github.com/sanjsanj/gymbuddy/blob/master/public/landing.png?raw=true)
+
 --------------
 
-###[Gym Buddy on Heroku](http://gympal.herokuapp.com)
-
---------------
-
-![coveralls ss](https://github.com/sanjsanj/gymbuddy/blob/master/public/landing.png?raw=true)
-
-Specification:
---------------
+##Specification:
 
 Gyms are scary and much better if you have a friend there with you. But what if no one you know goes to your gym? We need a website where you can search for people who go to your gym, so you can buddy up with them. You need to be able to make and search profiles, as well as send messages to people you're interested in buddying with.
 
-User Stories:
+-----------------
+
+##What is Gymbuddy:
+
+WIP
+
+------------------------------
+
+##How to use this repo yourself:
+
+WIP
+
 -------------
+
+##User stories:
+
 ```
 As a user
 I want to search for a gym buddy by location
@@ -47,9 +60,9 @@ I want to receive an email when someone wants to be my gym buddy
 So I can stay informed
 ```
 
-
-Tools:
 ------
+
+##Tools:
 
 **Application** | **Testing** | **Styling** | **Healthcheck**  
 --- | --- | --- | ---  
@@ -60,15 +73,17 @@ Devise | Shoulda | |
 Paperclip | Launchy | |  
 PostreSQL | | |  
 
-Development Blog:
 -----------------
+
+##Development blog:
 
 - [Day 1](http://sanjsanj.github.io/Week%209,%20Day%201/)
 - [Day 2](http://sanjsanj.github.io/Week%209,%20Day%202/)
 
 
-Tests:
 ------
+
+##Tests and healthcheck:
 
 ```
 WelcomeController
@@ -107,7 +122,7 @@ User
 16 examples, 0 failures
 ```
 
-![coveralls ss](https://github.com/sanjsanj/gymbuddy/blob/master/public/week9_gb_cc.png?raw=true)
+![coveralls screenshot](https://github.com/sanjsanj/gymbuddy/blob/master/public/week9_gb_cc.png?raw=true)
 
 -------------------
 
