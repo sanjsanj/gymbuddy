@@ -13,7 +13,7 @@
 Specification:
 --------------
 
-Make stuff!
+Gyms are scary and much better if you have a friend there with you. But what if no one you know goes to your gym? We need a website where you can search for people who go to your gym, so you can buddy up with them. You need to be able to make and search profiles, as well as send messages to people you're interested in buddying with.
 
 User Stories:
 -------------
@@ -36,7 +36,7 @@ So I can find a suitable gym buddy
 
 As a woman
 I want to filter my searches by gender
-So I can find a female buddy
+So I can find an appropriate buddy
 
 As a user
 I want to edit and delete my profile
