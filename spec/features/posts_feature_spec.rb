@@ -39,20 +39,19 @@ feature 'Posts' do
       expect(page).to have_content 'Powerlifting'
     end
 
-    xscenario 'it can filter by gender' do
-      sign_up('g@g.com', 'Female')
-      create_post('Running')
-      click_link 'Sign out'
-      sign_up
-      create_post
-      select 'Male', :from => "gender_menu"
-      expect(page).to have_content 'Swimming'
-      expect(page).not_to have_content 'Running'
-    end
+    # scenario 'it can filter by gender' do
+    #   sign_up('g@g.com', 'Female')
+    #   create_post('Running')
+    #   click_link 'Sign out'
+    #   sign_up
+    #   create_post
+    #   select 'Male', :from => "gender_menu"
+    #   expect(page).to have_content 'Swimming'
+    #   expect(page).not_to have_content 'Running'
+    # end
   end
 
   context 'when deleting a post' do
-    # I know this is hideous, don't judge me, Sanjay
     scenario 'you cannot delete a post that isn\'t yours' do
       sign_up
       create_post
