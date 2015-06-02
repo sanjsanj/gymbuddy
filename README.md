@@ -1,7 +1,8 @@
 #Gym Buddy - A listings and contact website  
 ###Made with care in TDD Rails and PostgreSQL
 
-[![Build Status](https://travis-ci.org/sanjsanj/gymbuddy.svg)](https://travis-ci.org/sanjsanj/gymbuddy) [![Coverage Status](https://coveralls.io/repos/sanjsanj/gymbuddy/badge.svg?branch=master)](https://coveralls.io/r/sanjsanj/gymbuddy?branch=master)
+[![Build Status](https://travis-ci.org/sanjsanj/gymbuddy.svg)](https://travis-ci.org/sanjsanj/gymbuddy)  [![Coverage Status](https://coveralls.io/repos/sanjsanj/gymbuddy/badge.svg?branch=master)](https://coveralls.io/r/sanjsanj/gymbuddy?branch=master)  [![Code Climate](https://codeclimate.com/github/sanjsanj/gymbuddy/badges/gpa.svg)](https://codeclimate.com/github/sanjsanj/gymbuddy)
+
 
 ###Table of contents
 
@@ -31,7 +32,7 @@ Gyms are scary and much better if you have a friend there with you. But what if 
 
 ###What is the Gymbuddy codebase
 
-WIP
+Gymbuddy is a test-driven Rails app that allows users to sign up, post listings, view listings and contact members
 
 ------------------------------
 
@@ -152,11 +153,11 @@ User
 16 examples, 0 failures
 ```
 
-![travis-CI screenshot]()
-
 ![coveralls screenshot](https://github.com/sanjsanj/gymbuddy/blob/master/public/week9_gb_cc.png?raw=true)
 
-![code climate screenshot]()
+![code climate screenshot](https://github.com/sanjsanj/sanjsanj.github.io/blob/master/images/cc-gymbuddy.png?raw=true)
+
+![code climate score](https://github.com/sanjsanj/sanjsanj.github.io/blob/master/images/cc4gpa.png?raw=true)
 
 -------------------
 
@@ -166,7 +167,7 @@ User
 
 It's enough of a challenge to pair effectively but working in small teams to hack an app together in less than 48 hours is new to all of us.  Getting our team cohesion and dynamics sorted was job one and it went great!  Major kudos to all of the team for really coming together and working our magnificent butts off.
 
-![img]()
+![img](https://github.com/sanjsanj/sanjsanj.github.io/blob/master/images/week9-gymteam1.JPG?raw=true)
 
 -------------
 
@@ -174,7 +175,7 @@ It's enough of a challenge to pair effectively but working in small teams to hac
 
 We've heard of these mystical things but this was our first time actually using them and I have to admit they are very useful.
 
-![img]()
+![img](https://github.com/sanjsanj/sanjsanj.github.io/blob/master/images/week9-kanban.JPG?raw=true)
 
 ---------------
 
@@ -282,4 +283,36 @@ Another awesome little trick we picked up was to run PSQL on the remote Heroku P
 
 ```
 heroku pg:psql
+```
+
+----------
+
+7 - **Mysteriously failing tets**
+
+A couple of weeks after our final deploy, when we came back to updating the readme our Travis reported a failing build!
+
+We were getting the same error for all the failing tests. In hindsight this was a really simple error but last night it took a little while to debug.
+
+```
+Failure/Error: create_post
+ Capybara::ElementNotFound:
+ Unable to find option "01"
+```
+
+Basically, what was happening was that a helper method of ours was selecting the present date and time to input into our form, it was looking for '01' for the date because it was the 1st, but our form deletes leading zeros, so the correct option should have been '1'.
+
+It took some debugging with `launchy' to finally figure that out but it was pretty funny and we're sure the guys and gals at Makers will get a real good laugh out of it in the morning.
+
+We also had to use this [strftime](http://apidock.com/ruby/DateTime/strftime) picker to get the correct expression. So, ultimately there was a bug in our testing procedure that we hadn't picked up because the dates we were testing on were double digits. We definitely feel much better prepared for a similar error in future.
+
+Our final helper method for selecting date and time:
+
+```
+def select_date_and_time(date)
+  select date.strftime('%Y'), :from => "post_day_1i" #year
+  select date.strftime('%B'), :from => "post_day_2i" #month
+  select date.strftime('%k'), :from => "post_day_3i" #day
+  select date.strftime('%H'), :from => "post_time_4i" #hour
+  select date.strftime('%M'), :from => "post_time_5i" #minute
+end
 ```
