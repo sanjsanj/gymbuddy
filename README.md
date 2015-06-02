@@ -99,10 +99,10 @@ PostgreSQL | | |
 
 ###Meet the team
 
-[Caron Stace](https://github.com/Stacca)
-[Milena Stoeva](https://github.com/M1lena)
-[George McGowan](https://github.com/GJMcGowan)
-[Sanjay Purswani](https://github.com/sanjsanj)
+[Caron Stace](https://github.com/Stacca)  
+[Milena Stoeva](https://github.com/M1lena)  
+[George McGowan](https://github.com/GJMcGowan)  
+[Sanjay Purswani](https://github.com/sanjsanj)  
 
 #####Below: Our office
 
