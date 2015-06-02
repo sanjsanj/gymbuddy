@@ -104,14 +104,6 @@ PostgreSQL | | |
 [George McGowan](https://github.com/GJMcGowan)  
 [Sanjay Purswani](https://github.com/sanjsanj)  
 
-#####Below: Our office
-
-![img](http://sanjsanj.github.io/images/week9-gymteam1.JPG)
-
-#####Below: Our 'kanban board' the morning after
-
-![img](http://sanjsanj.github.io/images/week9-kanban.JPG)
-
 --------------
 
 ###Tests and healthcheck
@@ -167,6 +159,7 @@ User
 
 It's enough of a challenge to pair effectively but working in small teams to hack an app together in less than 48 hours is new to all of us.  Getting our team cohesion and dynamics sorted was job one and it went great!  Major kudos to all of the team for really coming together and working our magnificent butts off.
 
+
 ![img](https://github.com/sanjsanj/sanjsanj.github.io/blob/master/images/week9-gymteam1.JPG?raw=true)
 
 -------------
@@ -174,6 +167,7 @@ It's enough of a challenge to pair effectively but working in small teams to hac
 2 - **Kanban boards.**
 
 We've heard of these mystical things but this was our first time actually using them and I have to admit they are very useful.
+
 
 ![img](https://github.com/sanjsanj/sanjsanj.github.io/blob/master/images/week9-kanban.JPG?raw=true)
 
