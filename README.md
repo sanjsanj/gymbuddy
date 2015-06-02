@@ -93,7 +93,7 @@ PostgreSQL | | |
 
 - [Day 1](http://sanjsanj.github.io/Week%209,%20Day%201/)
 - [Day 2](http://sanjsanj.github.io/Week%209,%20Day%202/)
-
+- [2 Weeks Later - A Funny Thing Happened](http://sanjsanj.github.io/Week%2012,%20Day%201/)
 
 ------
 
@@ -148,8 +148,6 @@ User
 ![coveralls screenshot](https://github.com/sanjsanj/gymbuddy/blob/master/public/week9_gb_cc.png?raw=true)
 
 ![code climate screenshot](https://github.com/sanjsanj/sanjsanj.github.io/blob/master/images/cc-gymbuddy.png?raw=true)
-
-![code climate score](https://github.com/sanjsanj/sanjsanj.github.io/blob/master/images/cc4gpa.png?raw=true)
 
 -------------------
 
@@ -301,7 +299,7 @@ We also had to use this [strftime](http://apidock.com/ruby/DateTime/strftime) pi
 
 Our final helper method for selecting date and time:
 
-```
+```ruby
 def select_date_and_time(date)
   select date.strftime('%Y'), :from => "post_day_1i" #year
   select date.strftime('%B'), :from => "post_day_2i" #month
