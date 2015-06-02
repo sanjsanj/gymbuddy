@@ -1,5 +1,4 @@
-#Gym Buddy  
-##A listings and contact website  
+#Gym Buddy - A listings and contact website  
 ###Made with care in TDD Rails and PostgreSQL
 
 [![Build Status](https://travis-ci.org/sanjsanj/gymbuddy.svg)](https://travis-ci.org/sanjsanj/gymbuddy) [![Coverage Status](https://coveralls.io/repos/sanjsanj/gymbuddy/badge.svg?branch=master)](https://coveralls.io/r/sanjsanj/gymbuddy?branch=master)
@@ -15,6 +14,8 @@
 - [Meet the team](#meet-the-team)
 - [Tests and healthcheck](#tests-and-healthcheck)
 - [What we learned](#what-we-learned)
+
+----------
 
 
 ![gymbuddy screenshot](https://github.com/sanjsanj/gymbuddy/blob/master/public/landing.png?raw=true)
@@ -97,7 +98,18 @@ PostgreSQL | | |
 
 ###Meet the team
 
-WIP
+[Caron Stace](https://github.com/Stacca)
+[Milena Stoeva](https://github.com/M1lena)
+[George McGowan](https://github.com/GJMcGowan)
+[Sanjay Purswani](https://github.com/sanjsanj)
+
+#####Below: Our office
+
+![img](http://sanjsanj.github.io/images/week9-gymteam1.JPG)
+
+#####Below: Our 'kanban board' the morning after
+
+![img](http://sanjsanj.github.io/images/week9-kanban.JPG)
 
 --------------
 
