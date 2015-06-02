@@ -1,15 +1,8 @@
+// To be refactored
+
 $(document).ready(function() {
   var constant = 0;
   var first = true;
-  // var gender_check = function() {
-  //   if(first !== true) {
-  //     if (constant === 1) {
-  //       $('.Female').hide();
-  //     } else if(constant === 0) {
-  //       $('.Male').hide();
-  //     };
-  //   };
-  // };
 
   var gender_menu_check = function() {
     var item = "";
@@ -90,22 +83,6 @@ $(document).ready(function() {
     gym_check();
   });
 
-  // $("#gender").click(function() {
-  //   if(constant === 0) {
-  //     $('.Female').hide();
-  //     $('.Male').show();
-  //     constant = 1;
-  //     $("#gender").text('Male')
-  //   } else if(constant === 1) {
-  //     $('.Male').hide();
-  //     $('.Female').show();
-  //     constant = 0;
-  //     $("#gender").text('Female')
-  //   };
-  //   fitness_check();
-  //   gym_check();
-  //   first = false;
-  // });
 
   $("#fitness_level").change(function () {
     var item = "";
