@@ -32,13 +32,29 @@ Gyms are scary and much better if you have a friend there with you. But what if 
 
 ###What is the Gymbuddy codebase
 
-Gymbuddy is a test-driven Rails app that allows users to sign up, post listings, view listings and contact members
+Gymbuddy is a test-driven Rails app that allows users to sign up, post listings, view listings and contact other members
 
 ------------------------------
 
 ###How to use this repo yourself
 
-WIP
+Fork or clone this repo, download it to your machine and then run `bundle` to install gems.
+
+Type `rspec` to run the tests.
+
+To serve it locally:  
+- Create 'gymbuddy_test' and 'gymbuddy_development' tables in your PostgreSQL database.  
+- Type `bin/rake db:create`  
+- Type `bin/rake db:migrate`  
+- Type `bin/rails s` to start the local server  
+- Open your browser and go to [localhost:3000](localhost:3000)  
+
+To deploy it to [Heroku](http://www.heroku.com):  
+- Please view the Heroku documentation to set up your Heroku web app  
+- Make sure you have the heroku git remote set  
+- Type `git push heroku master` to create the app and deploy it remotely  
+- Type `heroku run rake db:create` to create the Heroku database  
+- Type `heroku run rake db:migrate` to migrate the Heroku database  
 
 -------------
 
