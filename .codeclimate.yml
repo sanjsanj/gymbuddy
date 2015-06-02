@@ -1,2 +1,4 @@
 exclude_paths:
- - "public/assets"
+ - "public/assets/application-94dd318e086fdc505ca3fe72ee01488a9fca8ae03dc6c21e98073bf7ff2a9065.css"
+ - "public/assets/application-548dc40d0b30856c29fa0a80e96411babe3650d166e8e4735ced399fabd660ed.js"
+ - "public/assets/.sprockets-manifest-9a9c38e3515873e63f01027080bb860b.json"
