@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.2.1'
 
+gem 'dotenv-rails', :groups => [:development, :test]
 gem 'devise'
 gem 'rails', '4.2.1'
 gem 'pg'
@@ -15,7 +16,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'paperclip'
 gem 'bootstrap-sass'
 gem 'rails_12factor', group: :production
-gem 'dotenv'
+# gem 'dotenv'
+gem 'aws-sdk', '< 2.0'
 
 group :development, :test do
   gem 'byebug'
