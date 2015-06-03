@@ -3,6 +3,7 @@
 
 [![Build Status](https://travis-ci.org/sanjsanj/gymbuddy.svg)](https://travis-ci.org/sanjsanj/gymbuddy)  [![Coverage Status](https://coveralls.io/repos/sanjsanj/gymbuddy/badge.svg?branch=master)](https://coveralls.io/r/sanjsanj/gymbuddy?branch=master)  [![Code Climate](https://codeclimate.com/github/sanjsanj/gymbuddy/badges/gpa.svg)](https://codeclimate.com/github/sanjsanj/gymbuddy)
 
+#[Link to Heroku](https://gympal.herokuapp.com/)
 
 ###Table of contents
 
@@ -52,6 +53,7 @@ To serve it locally:
 To deploy it to [Heroku](http://www.heroku.com):  
 - Please view the Heroku documentation to set up your Heroku web app  
 - Make sure you have the heroku git remote set  
+- Type `RAILS_ENV=production bundle exec rake assets:precompile` to make the javascript/bootstrap assets ready for deployment.
 - Type `git push heroku master` to create the app and deploy it remotely  
 - Type `heroku run rake db:create` to create the Heroku database  
 - Type `heroku run rake db:migrate` to migrate the Heroku database  
