@@ -3,7 +3,7 @@
 
 [![Build Status](https://travis-ci.org/sanjsanj/gymbuddy.svg)](https://travis-ci.org/sanjsanj/gymbuddy)  [![Coverage Status](https://coveralls.io/repos/sanjsanj/gymbuddy/badge.svg?branch=master)](https://coveralls.io/r/sanjsanj/gymbuddy?branch=master)  [![Code Climate](https://codeclimate.com/github/sanjsanj/gymbuddy/badges/gpa.svg)](https://codeclimate.com/github/sanjsanj/gymbuddy)
 
-#[Link to Heroku](https://gympal.herokuapp.com/)
+##[Link to Gym Buddy on Heroku](https://gympal.herokuapp.com/)
 
 ###Table of contents
 
